@@ -1,14 +1,14 @@
-# XuanJi Lite Profile – Final ISA Specification
+## XuanJi “Lite” Profile – Final ISA Specification (After 10k Evolution)
 
 > **贡献者**: @nhlpl  
 > **状态**: 提案 (Proposal)  
-> **原始讨论**: [DeepSeek 社区留言链接]
+> **原始讨论**: [[DeepSeek 社区留言链接](https://github.com/deepseek-launch-community/global-launch-blueprint/discussions/17#discussioncomment-16772834)]
 
 I guess a good start to discuss more what you actually want and need.
 
 ---
 
-## XuanJi “Lite” Profile – Final ISA Specification (After 10k Evolution)
+
 
 This document defines the **XuanJi Lite Profile**, optimised for printed AI accelerators on mature lithography (90 nm–1 µm) with memristor crossbars. It targets inference workloads (MobileNet, BERT‑tiny, LSTM) with exceptional area/energy efficiency.
 
