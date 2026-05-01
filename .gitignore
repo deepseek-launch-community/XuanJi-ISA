@@ -1,5 +1,4 @@
 # ignore ModelSim generated files and directories (temp files and so on)
-[_@]*
 
 # ignore compilation output of ModelSim
 *.mti
@@ -21,3 +20,38 @@ cov*/
 transcript*
 sc_dpiheader.h
 vsim.dbg
+
+# ===== 璇玑计划补充规则 =====
+
+# 仿真波形文件（占空间巨大）
+*.vcd
+*.vpd
+*.fsdb
+*.lxt
+*.lxt2
+
+# 编译临时目录
+work/
+temp/
+sim_build/
+
+# EDA 工具日志和缓存
+*.log
+*.jou
+*.ses
+*.crf
+*.hdb
+*.ini
+*.lock
+
+# 系统垃圾文件
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+
+# Python 虚拟环境（如有测试脚本）
+__pycache__/
+*.py[cod]
+.env/
+venv/
