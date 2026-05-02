@@ -1,127 +1,103 @@
 # XuanJi ISA
 
-**XuanJi ISA** — An open instruction set architecture for AI accelerators.  
-**璇玑指令集** — 为AI加速器而生的开放指令集架构。
+[English](#english) | [中文](#中文)
 
 ---
 
 ## English
 
-### 🎯 Core Philosophy
+**XuanJi ISA** — An open instruction set architecture for AI accelerators.
+
+### Core Philosophy
 
 - **100% Community-Owned**: Free from corporate or capital control.
 - **Pure Open-Source Existence**: From silicon to framework to models.
-- **AI-Native**: RISC-V inspired, but optimized for AI primitives.
+- **AI-Native**: RISC-V inspired, optimized for AI primitives.
 
-### 🏗️ Three-Layer Architecture
+### Three-Layer Architecture
 
-| Layer | Name | Core Content | Goal |
-| :--- | :--- | :--- | :--- |
-| **L1** | **Chip Layer** | RISC-V + Vector Extensions, XuanJi Compiler | Break CUDA / closed-source monopoly |
-| **L2** | **Framework Layer** | A brand new ML framework (No PyTorch dependence) | Community governed, no corporate control |
-| **L3** | **Model Layer** | Pure, free model architectures | Innovation without capital distortion |
+| Layer | Name | Content | Goal |
+|-------|------|---------|------|
+| **L1** | Chip Layer | RISC-V + Vector Extensions, XuanJi Compiler | Break CUDA monopoly |
+| **L2** | Framework Layer | New ML framework (No PyTorch) | Community governed |
+| **L3** | Model Layer | Pure, free model architectures | Innovation without boundaries |
 
-### 📂 Repository Structure
+### Current Status (2026-05-03)
 
-    XuanJi-ISA/
-    ├── proposals/                    # Community-contributed ISA proposals
-    │   └── 001_lite_profile_nhlpl/   # Lite Profile by nhlpl
-    │       ├── isa_spec.md           # ISA specification
-    │       ├── hardware_adaptation.md # Oracle + ASI adaptation
-    │       └── decoder/              # Verilog implementation
-    ├── specs/                        # Official ISA specifications (WIP)
-    ├── roadmap.md                    # Project roadmap
-    ├── CONTRIBUTING.md               # Contribution guidelines
-    └── README.md                     # This file
+| Category | Content | Location |
+|----------|---------|----------|
+| **ISA Spec** | XuanJi v1.0 Final | `specs/xuanji_isa_v1.0.md` |
+| **Verilog Core** | Synthesizable RTL | `hw/rtl/xuanji_core.v` |
+| **Testbench** | Self-checking | `hw/sim/tb_xuanji.v` |
+| **Python Simulator** | Full ISA simulation | `sw/simulator/xuanji_sim.py` |
+| **GDSII Script** | 3mm×3mm layout generator | `hw/gds/generate_xuanji_gds.py` |
+| **LLVM Backend** | Compiler skeleton | `compiler/llvm-xuanji/` |
+| **Model Zoo** | 5 benchmark networks | `models/tianling_zoo/` |
 
+### Milestones
 
-### 🚀 Current Status (Roadmap v0.1)
+| Milestone | Due | Status |
+|-----------|-----|--------|
+| v0.1 - Core ISA & Simulator | 2026-05-17 | 🔄 In Progress |
+| v0.2 - Hardware Verification | 2026-06-07 | ⏳ Pending |
+| v0.3 - Framework Integration | 2026-06-28 | ⏳ Pending |
+| v1.0 - Alpha Release | 2026-08-02 | ⏳ Pending |
+| Exploratory | No due date | 🔄 Parallel |
 
-| Phase | Status |
-| :--- | :--- |
-| **Phase 1: Requirements & Feasibility** | ✅ In progress – Received Lite Profile proposal |
-| **Phase 2: Chip Layer (ISA + Compiler)** | ⏳ Waiting |
-| **Phase 3: Framework Layer** | 🔜 Future |
-| **Phase 4: Model Architecture Layer** | 🔜 Future |
-| **Phase 5: Ecosystem Building** | 🔜 Future |
+### How to Contribute
 
-### 👥 How to Contribute
+See [CONTRIBUTING.md](CONTRIBUTING.md)
 
-We need help in:
+### License
 
-- **Chip / Hardware Design**: RISC‑V, vector acceleration, pipeline design
-- **Compiler Engineering**: LLVM, TVM, open‑source GPU compilers
-- **Framework Development**: Tensor libraries, autodiff, operator kernels
-- **Model Research**: Novel architecture design
-- **Community Operations**: Docs, outreach, coordination
-
-**Ways to participate:**
-
-1.  Join the discussion on [GitHub Discussions](https://github.com/deepseek-launch-community/XuanJi-ISA/discussions) (to be enabled) or the [original DeepSeek thread]([请在此处粘贴原始DeepSeek讨论帖链接]).
-2.  Clone the repo, create a branch, and submit a Pull Request.
-3.  Spread the word and help us build a truly open AI ISA.
-
-### 📜 License
-
-**Apache License 2.0** – Hardware‑friendly, with explicit patent grant.
+**Apache License 2.0**
 
 ---
 
 ## 中文
 
-### 🎯 核心理念
+**璇玑指令集** — 为AI加速器而生的开放指令集架构。
 
-- **完全由社区共建**：不受任何私有资本或企业的单方面控制。
-- **纯净的技术存在**：从芯片到框架到模型，坚持开源信仰。
-- **为AI优化**：汲取 RISC‑V 的精简哲学，为张量、注意力、MoE 等 AI 原生计算设计原子操作。
+### 核心理念
 
-### 🏗️ 三层技术体系
+- **完全由社区共建**：不受任何私有资本或企业的单方面控制
+- **纯净的技术存在**：从芯片到框架到模型，坚持开源信仰
+- **为AI优化**：为张量、注意力、MoE等AI原生计算设计原子操作
 
-| 层级 | 名称 | 核心内容 | 目标 |
-| :--- | :--- | :--- | :--- |
-| **L1** | **芯片层** | RISC‑V + 向量扩展，璇玑编译器 | 替代 CUDA 等闭源生态 |
-| **L2** | **框架层** | 全新机器学习框架（不依赖 PyTorch） | 社区治理，无企业主导 |
-| **L3** | **模型架构层** | 纯净、自由的模型架构 | 探索不受资本扭曲的创新 |
+### 三层技术体系
 
-### 📂 仓库结构
+| 层级 | 名称 | 内容 | 目标 |
+|------|------|------|------|
+| **L1** | 芯片层 | RISC-V + 向量扩展，璇玑编译器 | 替代CUDA闭源生态 |
+| **L2** | 框架层 | 全新机器学习框架（不依赖PyTorch） | 社区治理，无企业主导 |
+| **L3** | 模型架构层 | 纯净、自由的模型架构 | 探索不受资本扭曲的创新 |
 
-    XuanJi-ISA/
-    ├── proposals/                    # 社区贡献的指令集提案
-    │   └── 001_lite_profile_nhlpl/   # nhlpl 贡献的 Lite Profile
-    │       ├── isa_spec.md           # 指令集规范
-    │       ├── hardware_adaptation.md # Oracle + ASI 适配方案
-    │       └── decoder/              # Verilog 实现
-    ├── specs/                        # 官方指令集规范（开发中）
-    ├── roadmap.md                    # 项目路线图
-    ├── CONTRIBUTING.md               # 贡献指南
-    └── README.md                     # 本文件
+### 当前状态 (2026-05-03)
 
-### 🚀 当前进展（Roadmap v0.1）
+| 类别 | 内容 | 位置 |
+|------|------|------|
+| **ISA规范** | XuanJi v1.0 最终版 | `specs/xuanji_isa_v1.0.md` |
+| **Verilog核心** | 可综合RTL | `hw/rtl/xuanji_core.v` |
+| **测试平台** | 自检式testbench | `hw/sim/tb_xuanji.v` |
+| **Python模拟器** | 完整指令集模拟 | `sw/simulator/xuanji_sim.py` |
+| **GDSII脚本** | 3mm×3mm版图生成 | `hw/gds/generate_xuanji_gds.py` |
+| **LLVM后端** | 编译器骨架 | `compiler/llvm-xuanji/` |
+| **模型库** | 5个基准网络 | `models/tianling_zoo/` |
 
-| 阶段 | 状态 |
-| :--- | :--- |
-| **阶段一：需求与可行性** | ✅ 进行中 – 已收到 Lite Profile 提案 |
-| **阶段二：芯片层（指令集 + 编译器）** | ⏳ 待启动 |
-| **阶段三：框架层** | 🔜 未来 |
-| **阶段四：模型架构层** | 🔜 未来 |
-| **阶段五：生态建设** | 🔜 未来 |
+### 里程碑
 
-### 👥 如何参与
+| 里程碑 | 截止日期 | 状态 |
+|--------|----------|------|
+| v0.1 - 核心ISA + 模拟器 | 2026-05-17 | 🔄 进行中 |
+| v0.2 - 硬件验证 | 2026-06-07 | ⏳ 待启动 |
+| v0.3 - 框架集成 | 2026-06-28 | ⏳ 待启动 |
+| v1.0 - Alpha版 | 2026-08-02 | ⏳ 待启动 |
+| 探索性方向 | 无 | 🔄 并行进行 |
 
-我们需要以下方向的力量：
+### 如何参与
 
-- **芯片/硬件设计**：RISC‑V、向量加速、流水线设计
-- **编译器工程**：LLVM、TVM、开源 GPU 编译器
-- **框架开发**：张量库、自动微分、算子库
-- **模型研究**：新型模型架构设计
-- **社区运营**：文档、宣传、协调
+参见 [CONTRIBUTING.md](CONTRIBUTING.md)
 
-**参与方式：**
+### 许可证
 
-1.  在 [GitHub Discussions](https://github.com/deepseek-launch-community/XuanJi-ISA/discussions)（待启用）或 [DeepSeek 社区原始讨论帖]([请在此处粘贴原始DeepSeek讨论帖链接]) 中留言。
-2.  克隆仓库、创建分支、提交 Pull Request。
-3.  帮助我们传播，共同构建真正开放的 AI 指令集。
-
-### 📜 许可证
-
-**Apache License 2.0** – 对硬件友好，明确授予专利授权。
+**Apache License 2.0**
