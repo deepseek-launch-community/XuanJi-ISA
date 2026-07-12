@@ -1,26 +1,37 @@
-# 璇玑指令集 (XuanJi ISA)
-
-[中文](#中文) | [English](#English)
+[中文](README.md) | [English](README-EN.md)
 
 ---
 
-## 中文
-
-# 璇玑指令集 (XuanJi ISA)
+# 璇玑执行模型 (XuanJi Execution Model) —— 基于栈机的 AI 推理探索
 
 璇玑是一个探索性项目，关注一个问题：如果不用现有的通用芯片架构（x86、ARM、GPU），能不能为AI推理设计一种更简单、更直接的硬件路径？
 
-我们的方向是：用栈机替代寄存器机，用ROM存储权重替代HBM读取，用树形多核替代总线结构。目标是减少指令解码的冗余、减少数据搬运的开销、减少对昂贵内存的依赖。
+我们的方向是：用栈机作为执行模型，用ROM存储权重替代HBM读取，用树形多核替代总线结构。栈机的指令集不是预设固定的，而是在运行时由字典自举生长（Forth风格）。目标是减少指令解码的冗余、减少数据搬运的开销、减少对昂贵内存的依赖。
+
+
+**来源说明**
+
+璇玑执行模型的核心理念（栈机、树形结构、感知-符号分离、指令集动态自举）来源于社区公开讨论，特别是以下贡献者的设计思路：
+
+- **qwas982**：在 #1174、#1188、#1243、#1254、#1289 等 Issue 中提出的栈机、树形结构和神经符号框架等核心理念。
+- **nhlpl**：在 #37、#47 等 Issue 中提交的硬件架构设计，包括：
+  - ACME‑NEURO‑90（#37）：256×256 忆阻器交叉阵列的声学神经形态加速芯片，90nm CMOS 工艺，能效 25 fJ/MAC。
+  - AxiomLiquid ISA（#47）：16 位自适应指令集架构，计算精度可按 fp16/bf16/int8/int4 动态变形，支持运行时自重构。
+  - Aether‑Rack（#40）：单机架量子声学计算机，基于 GKP 编码声子态，1024 逻辑量子比特。
+  - Huygens‑Box（#41）：桌面级芯片制造系统。
+
+本项目是对这些公开思想的工程化整理和验证，而非独立原创架构。
+
 
 璇玑和DeepSeek正在推进的自研推理芯片关注同一个技术方向——用更少的指令、更少的数据搬运、更直接的执行方式来优化推理效率。璇玑不依附于DeepSeek的官方架构，也不代表官方立场，但两者的技术关切是重叠的。这意味着参与璇玑的工作，本身是在探索一个与工业界前沿方向对齐的问题空间。
 
 
 **目前正在推进的具体事情：**
 
-- 9指令栈机模拟器（#30）：基本指令集已用Python验证，正在进行扩展测试。适合对仿真器或编译器有兴趣的人参与。
-- 树形多核结构讨论（#48）：正在探索多核之间的通信和控制流分布。适合对并行架构或片上网络有兴趣的人参与。
-- 硬件设计参考（#37、#40、#41、#47）：社区成员已提交多个硬件架构设计，包括类脑加速器、自适应ISA和量子计算原型。适合对数字电路或FPGA有兴趣的人参与。
-- 编译器集成讨论（#1484）：讨论如何在现有架构上通过编译器优化推理延迟。适合对MLIR或编译优化有兴趣的人参与。
+- **栈机模拟器**（#30）：基于Forth风格的可扩展指令字典，已在Python上完成原型验证，正在进行字典自举机制的扩展测试。指令集不是固定的9条，而是可从最小内核动态生长的。适合对仿真器或编译器有兴趣的人参与。
+- **树形多核结构讨论**（#48）：正在探索多核之间的通信和控制流分布。适合对并行架构或片上网络有兴趣的人参与。
+- **硬件设计参考**（#37、#40、#41、#47）：社区成员 nhlpl 已提交多个硬件架构设计，涵盖神经形态加速、自适应指令集、量子计算和桌面芯片制造等方向。适合对数字电路、FPGA 或新型计算范式有兴趣的人参与。
+- **编译器集成讨论**（#1484）：讨论如何在现有架构上通过编译器优化推理延迟。适合对MLIR或编译优化有兴趣的人参与。
 
 
 **参与璇玑的工作可能通向的方向：**
@@ -40,46 +51,6 @@
 **许可证：**
 
 Apache License 2.0
-
----
-
-## English
-
-# XuanJi ISA
-
-XuanJi is an exploratory project that asks one question: without relying on existing general‑purpose chip architectures (x86, ARM, GPU), can we design a simpler and more direct hardware path for AI inference?
-
-Our direction is: replace register machines with stack machines, replace HBM reads with ROM‑stored weights, and replace bus‑based structures with tree‑structured multi‑core layouts. The goal is to reduce instruction decoding overhead, minimize data movement, and lower dependency on expensive memory.
-
-XuanJi and DeepSeek's ongoing in‑house inference chip efforts share the same technical concern — optimizing inference efficiency through fewer instructions, less data movement, and more direct execution. XuanJi is not affiliated with DeepSeek's official architecture and does not represent any official position, but the technical directions overlap. This means that contributing to XuanJi is, in itself, an exploration of a problem space aligned with a frontier industrial direction.
-
-
-**What is currently being worked on:**
-
-- 9‑instruction stack machine simulator (#30): the basic instruction set has been validated in Python, and extended testing is ongoing. Suitable for those interested in simulators or compilers.
-- Tree‑structured multi‑core discussion (#48): exploring communication and control flow distribution between cores. Suitable for those interested in parallel architectures or network‑on‑chip.
-- Hardware design references (#37, #40, #41, #47): community‑submitted hardware architecture designs, including neuromorphic accelerators, adaptive ISAs, and quantum computing prototypes. Suitable for those interested in digital circuits or FPGAs.
-- Compiler integration discussion (#1484): discussing how to optimize inference latency through compilers on existing architectures. Suitable for those interested in MLIR or compilation optimization.
-
-
-**Possible directions for contributors:**
-
-- Simulator development → compiler design / hardware verification
-- Architecture discussion → technical reports / papers
-- Hardware design → FPGA prototypes / chip validation projects
-
-Not all of these directions will necessarily reach completion, but each one has the potential to be seen and evaluated by the broader community.
-
-
-**How to participate:**
-
-Leave a comment in the corresponding Issue (#30, #48, #37, #40, #41, #47, #1484), or open a new Issue to propose your own direction.
-
-
-**License:**
-
-Apache License 2.0
-
 
 
 
