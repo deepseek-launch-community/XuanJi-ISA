@@ -9,8 +9,8 @@ Our direction is: use a stack machine as the execution model, replace HBM reads 
 
 The core concepts of the XuanJi execution model — stack machine, tree‑structured multi‑core, perception‑symbol separation, dynamic self‑bootstrapping instruction set — are drawn from public community discussions, especially the design ideas proposed in the following contributions:
 
-- **qwas982**: Stack machine, tree‑structured multi‑core, and neuro‑symbolic framework concepts from #1174, #1188, #1243, #1254, #1289.
-- **nhlpl**: Hardware architecture designs from #37, #47, etc., including:
+- **qwas982**: Stack machine, tree‑structured multi‑core, and neuro‑symbolic framework concepts from #1174, #1188, #1243, #1254, #1289 in the DeepSeek‑V3 repository.
+- **nhlpl**: Hardware architecture designs from #37, #47, etc. in the XuanJi repository, including:
   - ACME‑NEURO‑90 (#37): 256×256 memristor crossbar acoustic neuromorphic accelerator, 90nm CMOS, 25 fJ/MAC efficiency.
   - AxiomLiquid ISA (#47): 16‑bit adaptive instruction set with runtime precision morphing (fp16/bf16/int8/int4), supporting self‑reconfiguration.
   - Aether‑Rack (#40): Rack‑mounted quantum acoustic computer with GKP‑encoded phononic qubits, 1024 logical qubits.
