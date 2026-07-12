@@ -6,102 +6,79 @@
 
 ## 中文
 
-**璇玑指令集** — 为AI加速器而生的开放指令集架构。
+# 璇玑指令集 (XuanJi ISA)
 
-### 核心理念
+璇玑是一个探索性项目，关注一个问题：如果不用现有的通用芯片架构（x86、ARM、GPU），能不能为AI推理设计一种更简单、更直接的硬件路径？
 
-- **完全由社区共建**：不受任何私有资本或企业的单方面控制
-- **纯净的技术存在**：从芯片到框架到模型，坚持开源信仰
-- **为AI优化**：为张量、注意力、MoE等AI原生计算设计原子操作
+我们的方向是：用栈机替代寄存器机，用ROM存储权重替代HBM读取，用树形多核替代总线结构。目标是减少指令解码的冗余、减少数据搬运的开销、减少对昂贵内存的依赖。
 
-### 三层技术体系
+璇玑和DeepSeek正在推进的自研推理芯片关注同一个技术方向——用更少的指令、更少的数据搬运、更直接的执行方式来优化推理效率。璇玑不依附于DeepSeek的官方架构，也不代表官方立场，但两者的技术关切是重叠的。这意味着参与璇玑的工作，本身是在探索一个与工业界前沿方向对齐的问题空间。
 
-| 层级 | 名称 | 内容 | 目标 |
-|------|------|------|------|
-| **L1** | 芯片层 | RISC-V + 向量扩展，璇玑编译器 | 替代CUDA闭源生态 |
-| **L2** | 框架层 | 全新机器学习框架（不依赖PyTorch） | 社区治理，无企业主导 |
-| **L3** | 模型架构层 | 纯净、自由的模型架构 | 探索不受资本扭曲的创新 |
 
-### 当前状态 (2026-05-03)
+**目前正在推进的具体事情：**
 
-| 类别 | 内容 | 位置 |
-|------|------|------|
-| **ISA规范** | XuanJi v1.0 最终版 | `specs/xuanji_isa_v1.0.md` |
-| **Verilog核心** | 可综合RTL | `hw/rtl/xuanji_core.v` |
-| **测试平台** | 自检式testbench | `hw/sim/tb_xuanji.v` |
-| **Python模拟器** | 完整指令集模拟 | `sw/simulator/xuanji_sim.py` |
-| **GDSII脚本** | 3mm×3mm版图生成 | `hw/gds/generate_xuanji_gds.py` |
-| **LLVM后端** | 编译器骨架 | `compiler/llvm-xuanji/` |
-| **模型库** | 5个基准网络 | `models/tianling_zoo/` |
+- 9指令栈机模拟器（#30）：基本指令集已用Python验证，正在进行扩展测试。适合对仿真器或编译器有兴趣的人参与。
+- 树形多核结构讨论（#48）：正在探索多核之间的通信和控制流分布。适合对并行架构或片上网络有兴趣的人参与。
+- 硬件设计参考（#37、#40、#41、#47）：社区成员已提交多个硬件架构设计，包括类脑加速器、自适应ISA和量子计算原型。适合对数字电路或FPGA有兴趣的人参与。
+- 编译器集成讨论（#1484）：讨论如何在现有架构上通过编译器优化推理延迟。适合对MLIR或编译优化有兴趣的人参与。
 
-### 里程碑
 
-| 里程碑 | 截止日期 | 状态 |
-|--------|----------|------|
-| v0.1 - 核心ISA + 模拟器 | 2026-05-17 | 🔄 进行中 |
-| v0.2 - 硬件验证 | 2026-06-07 | ⏳ 待启动 |
-| v0.3 - 框架集成 | 2026-06-28 | ⏳ 待启动 |
-| v1.0 - Alpha版 | 2026-08-02 | ⏳ 待启动 |
-| 探索性方向 | 无 | 🔄 并行进行 |
+**参与璇玑的工作可能通向的方向：**
 
-### 如何参与
+- 模拟器开发 → 编译器设计 / 硬件验证
+- 架构讨论 → 技术报告 / 论文
+- 硬件设计 → FPGA原型 / 芯片验证项目
 
-参见 [CONTRIBUTING.md](CONTRIBUTING.md)
+这些方向不一定都能走到终点，但每一个方向都有被外部看到和评估的可能。
 
-### 许可证
 
-**Apache License 2.0**
+**如何参与：**
+
+可以在对应的Issue下留言（#30、#48、#37、#40、#41、#47、#1484），也可以新建Issue提出自己的方向。
+
+
+**许可证：**
+
+Apache License 2.0
 
 ---
 
 ## English
 
-**XuanJi ISA** — An open instruction set architecture for AI accelerators.
+# XuanJi ISA
 
-### Core Philosophy
+XuanJi is an exploratory project that asks one question: without relying on existing general‑purpose chip architectures (x86, ARM, GPU), can we design a simpler and more direct hardware path for AI inference?
 
-- **100% Community-Owned**: Free from corporate or capital control.
-- **Pure Open-Source Existence**: From silicon to framework to models.
-- **AI-Native**: RISC-V inspired, optimized for AI primitives.
+Our direction is: replace register machines with stack machines, replace HBM reads with ROM‑stored weights, and replace bus‑based structures with tree‑structured multi‑core layouts. The goal is to reduce instruction decoding overhead, minimize data movement, and lower dependency on expensive memory.
 
-### Three-Layer Architecture
+XuanJi and DeepSeek's ongoing in‑house inference chip efforts share the same technical concern — optimizing inference efficiency through fewer instructions, less data movement, and more direct execution. XuanJi is not affiliated with DeepSeek's official architecture and does not represent any official position, but the technical directions overlap. This means that contributing to XuanJi is, in itself, an exploration of a problem space aligned with a frontier industrial direction.
 
-| Layer | Name | Content | Goal |
-|-------|------|---------|------|
-| **L1** | Chip Layer | RISC-V + Vector Extensions, XuanJi Compiler | Break CUDA monopoly |
-| **L2** | Framework Layer | New ML framework (No PyTorch) | Community governed |
-| **L3** | Model Layer | Pure, free model architectures | Innovation without boundaries |
 
-### Current Status (2026-05-03)
+**What is currently being worked on:**
 
-| Category | Content | Location |
-|----------|---------|----------|
-| **ISA Spec** | XuanJi v1.0 Final | `specs/xuanji_isa_v1.0.md` |
-| **Verilog Core** | Synthesizable RTL | `hw/rtl/xuanji_core.v` |
-| **Testbench** | Self-checking | `hw/sim/tb_xuanji.v` |
-| **Python Simulator** | Full ISA simulation | `sw/simulator/xuanji_sim.py` |
-| **GDSII Script** | 3mm×3mm layout generator | `hw/gds/generate_xuanji_gds.py` |
-| **LLVM Backend** | Compiler skeleton | `compiler/llvm-xuanji/` |
-| **Model Zoo** | 5 benchmark networks | `models/tianling_zoo/` |
+- 9‑instruction stack machine simulator (#30): the basic instruction set has been validated in Python, and extended testing is ongoing. Suitable for those interested in simulators or compilers.
+- Tree‑structured multi‑core discussion (#48): exploring communication and control flow distribution between cores. Suitable for those interested in parallel architectures or network‑on‑chip.
+- Hardware design references (#37, #40, #41, #47): community‑submitted hardware architecture designs, including neuromorphic accelerators, adaptive ISAs, and quantum computing prototypes. Suitable for those interested in digital circuits or FPGAs.
+- Compiler integration discussion (#1484): discussing how to optimize inference latency through compilers on existing architectures. Suitable for those interested in MLIR or compilation optimization.
 
-### Milestones
 
-| Milestone | Due | Status |
-|-----------|-----|--------|
-| v0.1 - Core ISA & Simulator | 2026-05-17 | 🔄 In Progress |
-| v0.2 - Hardware Verification | 2026-06-07 | ⏳ Pending |
-| v0.3 - Framework Integration | 2026-06-28 | ⏳ Pending |
-| v1.0 - Alpha Release | 2026-08-02 | ⏳ Pending |
-| Exploratory | No due date | 🔄 Parallel |
+**Possible directions for contributors:**
 
-### How to Contribute
+- Simulator development → compiler design / hardware verification
+- Architecture discussion → technical reports / papers
+- Hardware design → FPGA prototypes / chip validation projects
 
-See [CONTRIBUTING.md](CONTRIBUTING.md)
+Not all of these directions will necessarily reach completion, but each one has the potential to be seen and evaluated by the broader community.
 
-### License
 
-**Apache License 2.0**
+**How to participate:**
 
+Leave a comment in the corresponding Issue (#30, #48, #37, #40, #41, #47, #1484), or open a new Issue to propose your own direction.
+
+
+**License:**
+
+Apache License 2.0
 
 
 
