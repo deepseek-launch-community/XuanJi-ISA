@@ -45,7 +45,7 @@ nhlpl 是本仓库的持续贡献者。据 DeepSeek Community 月度总结
 他在 2026 年 9 月提交 143 条 Issue（#96–#239），其中 6 条与璇玑直接相关，
 2 条为安全层可采纳。
 为便于阅读者快速定位，这里给出入口：
-- **璇玑侧追踪与提取入口**：[Issue 链接]
+- **璇玑侧追踪与提取入口**：[#360](https://github.com/deepseek-launch-community/XuanJi-ISA/issues/360)
 - **对外曝光**：[#1659](https://github.com/deepseek-ai/DeepSeek-V3/issues/1659)
   Community Spotlight（DeepSeek-V3 仓库，璇玑项目发起，聚焦 #103 的 2000-GPU 部署相关性）
 - **归类性质入口**：
