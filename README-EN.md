@@ -49,7 +49,7 @@ directly related to XuanJi and 2 are adoptable for the safety layer.
 
 For readers who want to locate his work quickly, here are the entry points:
 
-- **XuanJi-side tracking and extraction entry**: [Issue link]
+- **XuanJi-side tracking and extraction entry**: [#360](https://github.com/deepseek-launch-community/XuanJi-ISA/issues/360)
 - **External spotlight**:
   [#1659](https://github.com/deepseek-ai/DeepSeek-V3/issues/1659)
   Community Spotlight (DeepSeek-V3 repo, initiated by the XuanJi project,
