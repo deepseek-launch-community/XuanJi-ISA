@@ -42,30 +42,70 @@
 
 nhlpl 是本仓库的持续贡献者。据 DeepSeek Community 月度总结
 （[#1687](https://github.com/deepseek-ai/DeepSeek-V3/issues/1687)），
-他在 2026 年 9 月提交 143 条 Issue（#96–#239），其中 6 条与璇玑直接相关，
-2 条为安全层可采纳。
+他在 2026 年 9 月提交 143 条 Issue（#96–#239）。
+
 为便于阅读者快速定位，这里给出入口：
-- **璇玑侧追踪与提取入口**：[#360](https://github.com/deepseek-launch-community/XuanJi-ISA/issues/360)
+
+- **璇玑侧追踪与提取入口**：
+  [#360](https://github.com/deepseek-launch-community/XuanJi-ISA/issues/360)
 - **对外曝光**：[#1659](https://github.com/deepseek-ai/DeepSeek-V3/issues/1659)
   Community Spotlight（DeepSeek-V3 仓库，璇玑项目发起，聚焦 #103 的 2000-GPU 部署相关性）
 - **归类性质入口**：
-  - [#104](https://github.com/deepseek-launch-community/XuanJi-ISA/issues/104) SKILLS — Handoff Document（交接/总览性质）
-  - [#175](https://github.com/deepseek-launch-community/XuanJi-ISA/issues/175) Six Drafts Filling Actual Gaps（65 篇 rank 草稿 + 12 篇 ZAA position paper，按 25+ 学科铺开）
-- **璇玑直接相关**（优先跟踪）：#98、#104、#116、#117、#118、#119
-- **安全层可采纳**：#223、#227
-- **主题归类**（详见追踪 Issue）：
-  - 早期硬件架构：#37、#40、#41、#47
-  - 璇玑直接相关：#98、#104、#116–#119
-  - 秩与低秩压缩：#123–#174
-  - 元胞自动机 / Rule 30：#124、#139、#142、#144、#148、#153、#156、#159、#164–#165、#171
-  - 物理/化学/生物储备池：#99、#101、#107–#112、#121、#126–#130、#157、#160、#163
-  - 古代编码与认知吸引子：#176–#202
-  - ZAA 与组合架构：#203–#239
-  - 记忆基质（LTM / WM / VSA）：#240–#249
-  - 秩-4 原理 / 边缘计算：#250–#256
+  - [#104](https://github.com/deepseek-launch-community/XuanJi-ISA/issues/104) SKILLS — Handoff Document
+  - [#175](https://github.com/deepseek-launch-community/XuanJi-ISA/issues/175) Six Drafts Filling Actual Gaps
+
+**标签说明**
+
+| 标签 | 含义 |
+|---|---|
+| `xuanji:usrable` | 可直接采纳为璇玑组件 |
+| `xuanji:related` | 方向直接相关，但为规格/提案/约束/观察，待验证 |
+
+**xuanji:usrable（可直接采纳，共 10 条）**
+
+| Issue | 标题 |
+|---|---|
+| #30 | Chinese Stack Machine v0.1 |
+| #57 | cf-hash-embedded |
+| #87 | Self-Summarizing LLM "Zero-KV" Cache |
+| #93 | "Drowning" Life Jacket Hydrostatic Triggers |
+| #94 | Haptic Reality |
+| #116 | Software-executable validation of blueprints |
+| #118 | Self-Optimizing Runtime via Runtime ISA Growth |
+| #172 | The Effective Rank of a Chemical Library Depends on the Fingerprint Encoding |
+| #223 | Adversarial Robustness and Verification of ZAA |
+| #227 | The Atom Classifier in ZAA |
+
+**主题归类（#1–#267 全量）**
+
+- v0.1 核心基线：#30
+- 早期硬件架构：#37、#40、#41、#47
+- 系统架构 / AI 加速器：#2、#3、#4、#5、#16、#17
+- 自定义 ISA / 处理器设计：#23、#24、#28、#38
+- 声学超表面系列：#29、#31–#35
+- 90nm 半导体制造：#36、#37
+- 家庭制造 / 量子硬件：#6–#15、#18、#19、#21、#22、#26
+- 压缩与记忆：#95、#96、#97、#107
+- 栈机与编译：#98、#101、#102、#116–#119
+- 化学计算与方法论：#99、#104、#105、#133
+- 延迟线 TCTN 系列：#106、#108–#112
+- 密码学与安全：#113、#114、#115、#192、#193
+- Physarum 系列：#126–#130、#141
+- CA 规则空间与混沌：#123、#124、#139、#142、#144、#148、#153、#156、#159、#164、#165、#171
+- 秩与特征分析：#125、#131、#132、#134–#136、#143、#145–#147、#150、#154、#155、#158、#161、#168–#170、#173、#174
+- 优化与决策：#120、#121、#122、#137、#138、#140、#149、#151、#152
+- 古代编码与认知吸引子：#176–#202
+- ZAA 与组合架构：#203–#239
+- 记忆基质（LTM / WM / VSA）：#240–#249
+- 秩-4 原理 / 边缘计算：#250–#256
+- 综合与部署：#257
+- XuanJi ISA 直接测试床：#258
+- 训练动力学与表示：#259–#261
+- 组合与量化：#263–#264、#266–#267
+- 波域原语：#265
 
 nhlpl 持续在本仓库贡献研究 Issue。归类、提取与璇玑侧采纳判断由璇玑团队维护，
-入口见上方追踪 Issue。
+入口见上方追踪 Issue [#360](https://github.com/deepseek-launch-community/XuanJi-ISA/issues/360)。
 
 
 
