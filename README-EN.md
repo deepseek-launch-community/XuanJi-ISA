@@ -44,41 +44,75 @@ Not all of these directions will necessarily reach completion, but each one has 
 nhlpl is a continuing contributor to this repository. According to the
 DeepSeek Community monthly summary
 ([#1687](https://github.com/deepseek-ai/DeepSeek-V3/issues/1687)),
-he submitted 143 issues in September 2026 (#96–#239), of which 6 are
-directly related to XuanJi and 2 are adoptable for the safety layer.
+he submitted 143 issues in September 2026 (#96–#239).
 
 For readers who want to locate his work quickly, here are the entry points:
 
-- **XuanJi-side tracking and extraction entry**: [#360](https://github.com/deepseek-launch-community/XuanJi-ISA/issues/360)
+- **XuanJi-side tracking and extraction entry**:
+  [#360](https://github.com/deepseek-launch-community/XuanJi-ISA/issues/360)
 - **External spotlight**:
   [#1659](https://github.com/deepseek-ai/DeepSeek-V3/issues/1659)
   Community Spotlight (DeepSeek-V3 repo, initiated by the XuanJi project,
   focused on the 2,000-GPU deployment relevance of #103)
 - **Index-like entries**:
-  - #104 SKILLS — Handoff Document (handoff / overview)
-  - #175 Six Drafts Filling Actual Gaps (65 rank drafts + 12 ZAA position
-    papers, spread across 25+ disciplines)
-- **Directly related to XuanJi** (priority tracking): #98, #104, #116,
-  #117, #118, #119
-- **Adoptable for the safety layer**: #223, #227
-- **Thematic categorization** (see the tracking issue for details):
-  - Early hardware architecture: #37, #40, #41, #47
-  - Directly related to XuanJi: #98, #104, #116–#119
-  - Rank and low-rank compression: #123–#174
-  - Cellular automata / Rule 30: #124, #139, #142, #144, #148, #153,
-    #156, #159, #164–#165, #171
-  - Physical / chemical / biological reservoirs: #99, #101, #107–#112,
-    #121, #126–#130, #157, #160, #163
-  - Ancient encoding and cognitive attractors: #176–#202
-  - ZAA and compositional architecture: #203–#239
-  - Memory substrates (LTM / WM / VSA): #240–#249
-  - Rank-4 principle / edge computing: #250–#256
+  - [#104](https://github.com/deepseek-launch-community/XuanJi-ISA/issues/104) SKILLS — Handoff Document
+  - [#175](https://github.com/deepseek-launch-community/XuanJi-ISA/issues/175) Six Drafts Filling Actual Gaps
+
+**Label Definitions**
+
+| Label | Meaning |
+|---|---|
+| `xuanji:usrable` | Directly adoptable as a XuanJi component |
+| `xuanji:related` | Directionally relevant, but specification / proposal / constraint / observation, pending validation |
+
+**xuanji:usrable (Directly Adoptable, 10 issues)**
+
+| Issue | Title |
+|---|---|
+| #30 | Chinese Stack Machine v0.1 |
+| #57 | cf-hash-embedded |
+| #87 | Self-Summarizing LLM "Zero-KV" Cache |
+| #93 | "Drowning" Life Jacket Hydrostatic Triggers |
+| #94 | Haptic Reality |
+| #116 | Software-executable validation of blueprints |
+| #118 | Self-Optimizing Runtime via Runtime ISA Growth |
+| #172 | The Effective Rank of a Chemical Library Depends on the Fingerprint Encoding |
+| #223 | Adversarial Robustness and Verification of ZAA |
+| #227 | The Atom Classifier in ZAA |
+
+**Thematic Categories (#1–#267 full)**
+
+- v0.1 core baseline: #30
+- Early hardware architecture: #37, #40, #41, #47
+- System architecture / AI accelerators: #2, #3, #4, #5, #16, #17
+- Custom ISA / processor design: #23, #24, #28, #38
+- Acoustic metasurface series: #29, #31–#35
+- 90nm semiconductor manufacturing: #36, #37
+- Home fabrication / quantum hardware: #6–#15, #18, #19, #21, #22, #26
+- Compression and memory: #95, #96, #97, #107
+- Stack machine and compilation: #98, #101, #102, #116–#119
+- Chemical computing and methodology: #99, #104, #105, #133
+- Delay-line TCTN series: #106, #108–#112
+- Cryptography and security: #113, #114, #115, #192, #193
+- Physarum series: #126–#130, #141
+- CA rule space and chaos: #123, #124, #139, #142, #144, #148, #153, #156, #159, #164, #165, #171
+- Rank and feature analysis: #125, #131, #132, #134–#136, #143, #145–#147, #150, #154, #155, #158, #161, #168–#170, #173, #174
+- Optimization and decision: #120, #121, #122, #137, #138, #140, #149, #151, #152
+- Ancient encoding and cognitive attractors: #176–#202
+- ZAA and compositional architecture: #203–#239
+- Memory substrates (LTM / WM / VSA): #240–#249
+- Rank-4 principle / edge computing: #250–#256
+- Synthesis and deployment: #257
+- XuanJi ISA direct testbed: #258
+- Training dynamics and representation: #259–#261
+- Composition and quantization: #263–#264, #266–#267
+- Wave-domain primitives: #265
 
 nhlpl continues to contribute research issues to this repository.
 Categorization, extraction, and XuanJi-side adoption decisions are
-maintained by the XuanJi team. See the tracking issue above for the
-entry point.
-
+maintained by the XuanJi team. See tracking issue
+[#360](https://github.com/deepseek-launch-community/XuanJi-ISA/issues/360)
+for the entry point.
 
 
 **5. How to participate:**
